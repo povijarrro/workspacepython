@@ -1,4 +1,5 @@
 import turtle as tl
+import math
 
 t=tl.Turtle()
 t.shape('classic')
@@ -29,12 +30,17 @@ def koch(t,len, n):
         t.left(60.0)
         koch(t,len/3.0,n-1)
 
+def polygon(t,d,n):
+    for i in range(n):
+        t.forward(d*math.sin(180.0/n))
+        t.left(360.0/n)  
+
 
 main()
 t.penup()
-t.goto(-900,-300)
+t.goto(0,0)
 t.pendown()
 t.speed(-100)
-koch(t,1800,7)
-
+#koch(t,1800,5)
+polygon(t,1,100)
 tl.done()
