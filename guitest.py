@@ -4,7 +4,7 @@ import math
 t=tl.Turtle()
 t.shape('classic')
 t.turtlesize(0.5)
-t.hideturtle()
+#t.hideturtle()
 
 def main():
     screen = tl.Screen()
@@ -31,8 +31,9 @@ def koch(t,len, n):
         koch(t,len/3.0,n-1)
 
 def polygon(t,d,n):
+    t=t
     for i in range(n):
-        t.forward(d*math.sin(180.0/n))
+        t.forward(d*math.sin(math.pi/n))
         t.left(360.0/n)  
 
 
@@ -40,7 +41,11 @@ main()
 t.penup()
 t.goto(0,0)
 t.pendown()
-t.speed(-100)
+t.speed(0)
 #koch(t,1800,5)
-polygon(t,1,100)
+for i in range(3,101):
+    polygon(t,100,i)
+    t.penup()
+    t.goto(0,0)
+    t.pendown()
 tl.done()
