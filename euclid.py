@@ -1,13 +1,11 @@
-import math
 
 def gcd(a,b):
     a,b=abs(a),abs(b)
-    if(b==0):
-        return a
-    else:
-        return gcd(b,a%b)
+    while(b):
+        a,b=b,a%b
+    return a    
     
 def lcm(a,b):
     return int(a*b/gcd(a,b))
 
-print(gcd(30000000000000000000000000000000000000000000000000000000000000000000000000000000000000,2450000000000000000000000000000000000000000000000000000000000))
+print(gcd(2*3*3*5*5*5*7*11,-5*7*11*13))
