@@ -94,6 +94,9 @@ if __name__ == "__main__":
 
         pygame.draw.rect(window, config.APPLE_COLOR, pygame.Rect(
             apple[0], apple[1], config.SNAKE_SIZE, config.SNAKE_SIZE))
+        score_text = pygame.font.SysFont(config.GAME_FONT, config.FONT_SIZE).render(
+            f"Score {score}", True, config.FONT_COLOR)
+        window.blit(score_text,(0,0))    
         pygame.display.update()
         window.fill(config.BACKGROUND_COLOR)
         clock.tick(config.GAME_FPS)

@@ -1,10 +1,10 @@
-import pygame
-
-BODY_COLOR = pygame.Color(51, 204, 51)
-BACKGROUND_COLOR = pygame.Color(0, 0, 0)
-APPLE_COLOR = pygame.Color(200, 0, 0)
-
-GAME_RES = (600, 600)
+APPLE_COLOR = (200, 0, 0)
+BACKGROUND_COLOR = (0, 0, 0)
+BODY_COLOR = (51, 204, 51)
+FONT_COLOR= (255,255,0)
+FONT_SIZE=50
+GAME_FONT = "comicsans"
 GAME_FPS = 9
-
+GAME_RES = (600, 600)
 SNAKE_SIZE = 20
+
