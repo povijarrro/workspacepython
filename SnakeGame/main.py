@@ -36,7 +36,7 @@ def is_out(snake, game_res):
 
 
 def end_game(window):
-    print("GAME OVER")
+    print("GAME OVER.Your score is "+str(score))
     window.fill(config.BACKGROUND_COLOR)
     pygame.quit()
     sys.exit()
@@ -48,8 +48,8 @@ def generate_apple(game_res, snake_size):
     return [x, y]
 
 
-def is_collision(snake_head, apple):
-    if snake_head[0] == apple[0] and snake_head[1] == apple[1]:
+def is_collision(snake_head, position):
+    if snake_head[0] == position[0] and snake_head[1] == position[1]:
         return True
     return False
 
@@ -61,6 +61,7 @@ if __name__ == "__main__":
     snake = [[config.GAME_RES[0]//2, config.GAME_RES[1]//2]]
     apple = generate_apple(config.GAME_RES, config.SNAKE_SIZE)
     direction = "LEFT"
+    score=0
 
     while True:
         for event in pygame.event.get():
@@ -75,7 +76,7 @@ if __name__ == "__main__":
         if is_collision(snake[0], apple):
             print("Collision")
             apple = generate_apple(config.GAME_RES, config.SNAKE_SIZE)
-        
+            score+=1        
         else:
             snake.pop()
 
@@ -89,6 +90,7 @@ if __name__ == "__main__":
         for part in snake[1:len(snake)]:
             if(is_collision(snake[0],part)):
                 end_game(window)
+                 
 
         pygame.draw.rect(window, config.APPLE_COLOR, pygame.Rect(
             apple[0], apple[1], config.SNAKE_SIZE, config.SNAKE_SIZE))
