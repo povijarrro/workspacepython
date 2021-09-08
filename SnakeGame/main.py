@@ -42,7 +42,7 @@ def end_game(window):
     window.fill(config.BACKGROUND_COLOR)
     Game_over_text=pygame.font.SysFont(config.GAME_FONT, config.FONT_SIZE).render(
             f"GAME OVER.Your score is {score}", True, config.FONT_COLOR)
-    window.blit(Game_over_text,(config.GAME_RES[0]//2,config.GAME_RES[1]//2))        
+    window.blit(Game_over_text,(0,config.GAME_RES[1]//2))        
     #pygame.quit()
     #sys.exit()
 
