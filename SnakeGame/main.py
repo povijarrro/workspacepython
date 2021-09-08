@@ -5,6 +5,7 @@ import sys
 
 from config import config
 
+
 def update_position(snake, direction, step):
     if direction == "UP":
         snake = [snake[0], snake[1] - step]
@@ -36,10 +37,14 @@ def is_out(snake, game_res):
 
 
 def end_game(window):
+
     print("GAME OVER.Your score is "+str(score))
     window.fill(config.BACKGROUND_COLOR)
-    pygame.quit()
-    sys.exit()
+    Game_over_text=pygame.font.SysFont(config.GAME_FONT, config.FONT_SIZE).render(
+            f"GAME OVER.Your score is {score}", True, config.FONT_COLOR)
+    window.blit(Game_over_text,(config.GAME_RES[0]//2,config.GAME_RES[1]//2))        
+    #pygame.quit()
+    #sys.exit()
 
 
 def generate_apple(game_res, snake_size):
