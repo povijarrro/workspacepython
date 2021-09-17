@@ -36,13 +36,13 @@ def is_out(snake, game_res):
     return False
 
 
-def end_game(window):
+def game_over(window):
 
     print("GAME OVER.Your score is "+str(score))
     window.fill(config.BACKGROUND_COLOR)
     Game_over_text=pygame.font.SysFont(config.GAME_FONT, config.FONT_SIZE).render(
             f"GAME OVER.Your score is {score}", True, config.FONT_COLOR)
-    window.blit(Game_over_text,(0,config.GAME_RES[1]//2))        
+    window.blit(Game_over_text,(0,config.GAME_RES[1]//2))      
     #pygame.quit()
     #sys.exit()
 
@@ -63,6 +63,8 @@ if __name__ == "__main__":
     pygame.init()
     clock = pygame.time.Clock()
     window = pygame.display.set_mode(config.GAME_RES)
+
+    
     snake = [[config.GAME_RES[0]//2, config.GAME_RES[1]//2]]
     apple = generate_apple(config.GAME_RES, config.SNAKE_SIZE)
     direction = "LEFT"
@@ -86,7 +88,7 @@ if __name__ == "__main__":
             snake.pop()
 
         if is_out(snake[0], config.GAME_RES):
-            end_game(window)
+            game_over(window)
         
         for part in snake:
             pygame.draw.rect(window, config.BODY_COLOR, pygame.Rect(
@@ -94,7 +96,7 @@ if __name__ == "__main__":
         
         for part in snake[1:len(snake)]:
             if(is_collision(snake[0],part)):
-                end_game(window)
+                game_over(window)
                  
 
         pygame.draw.rect(window, config.APPLE_COLOR, pygame.Rect(
