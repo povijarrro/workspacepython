@@ -22,4 +22,8 @@ def draw_stars_pyramid(n,filled=True):
 
 with open("testfile.txt","w") as testfile:
     testfile.writelines(draw_stars_pyramid(4,filled=False))
-print(draw_stars_pyramid(10,False),factorial(100000))
+#print(draw_stars_pyramid(10,False),factorial(100000))
+p=[[1,2,3],
+[4,5,6],
+[7,8,9]]
+print(str(p[1][1]))

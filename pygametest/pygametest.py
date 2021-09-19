@@ -1,26 +1,26 @@
-import pygame as pg
-from pygame.constants import K_ESCAPE
+import pygame
+from pygame.locals import *
 
-def init(bg):
-    pg.init()
-    bgrnd=pg.image.load("pygametest/"+bg)
-    bg_size=bgrnd.get_size()
-    bgrnd=pg.transform.scale(bgrnd,(int(900*bg_size[0]/bg_size[1]), 900))
-    bg_size = bgrnd.get_size()
-    window = pg.display.set_mode(bg_size)
-    window.blit(bgrnd,(0,0))
-    pg.display.update()
+SIZE = 500, 200
+RED = (255, 0, 0)
+GRAY = (150, 150, 150)
 
-init("bgrnd.jpg")
-car = pg.image.load("pygametest/car-5.png")
-window = pg.display.get_surface()
-size=window.get_size()
-car_size=car.get_size()
-window.blit(car,(int(size[0]/2-car_size[0]/2),size[1]-250))
-pg.display.update()
+pygame.init()
+screen = pygame.display.set_mode(SIZE)
+
+rect = Rect(50, 60, 200, 80)
+print(f'x={rect.x}, y={rect.y}, w={rect.w}, h={rect.h}')
+print(f'left={rect.left}, top={rect.top}, right={rect.right}, bottom={rect.bottom}')
+print(f'center={rect.center}')
 
 running = True
 while running:
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
+    for event in pygame.event.get():
+        if event.type == QUIT:
             running = False
+
+    screen.fill(GRAY)
+    pygame.draw.rect(screen, RED, rect)
+    pygame.display.flip()
+
+pygame.quit()
