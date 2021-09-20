@@ -30,7 +30,7 @@ nono=Nonogram([
 [0,0,0,0,0,0,0,3,1,0],
 [0,0,0,0,0,11,4,3,4,0],
 [0,1,1,11,1,2,6,2,2,5],
-[4,1,1,6,5,3,1,1,2,3]])
+[4,1,1,6,5,3,1,1,2,3]],20)
 print(nono)
 nono.draw(pg.display,pg.font.SysFont("comicsans",20),pg.Color('yellow'))
 
