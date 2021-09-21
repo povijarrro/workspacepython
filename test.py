@@ -27,3 +27,12 @@ p=[[1,2,3],
 [4,5,6],
 [7,8,9]]
 print(str(p[1][1]))
+
+a=[[0,1,2,3,4],[5,6,7,8,9],[10,11,12,13,14],[15,16,17,18,19],[20,21,22,23,24]]
+b=[]
+for i in range(5):
+    row=[]
+    for j in range(5):
+        row.append(5*i+j)
+    b.append(row)    
+print([[a[i][j] for j in range(2,4)] for i in range(1,4)])
