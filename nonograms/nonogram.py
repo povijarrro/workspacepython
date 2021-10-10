@@ -73,7 +73,6 @@ class Nonogram:
                 tile_rect=tile_surf.get_rect()
                 tile_surf.blit(tile_text,(tile_rect.w//2-text_rect.w//2, tile_rect.h//2-text_rect.h//2))
                 surf.blit(tile_surf, pos)
-                #surf.fill(bg_color)
         return surf
         
 
