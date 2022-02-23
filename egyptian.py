@@ -5,7 +5,6 @@ def egyptian(x, y):
     neg=((x<0)^(y<0))
     x=abs(x//g)
     y=abs(y//g)
-    first=""
     if(x>y):
         div=x//y
         first=str(div)
