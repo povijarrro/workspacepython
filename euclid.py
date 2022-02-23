@@ -1,3 +1,4 @@
+import math
 
 def gcd(a,b):
     a,b=abs(a),abs(b)
@@ -8,4 +9,5 @@ def gcd(a,b):
 def lcm(a,b):
     return int(a*b/gcd(a,b))
 
-print(gcd(2*3*3*5*5*5*7*11,-5*7*11*13))
+print(gcd(0,0))
+print(math.gcd(0,0))
