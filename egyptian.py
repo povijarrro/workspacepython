@@ -26,4 +26,4 @@ def egyptian(x, y):
     
     return(composition)
 
-print(egyptian(56, 18))
+print(egyptian(19, 23))
