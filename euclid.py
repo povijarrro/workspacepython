@@ -9,5 +9,5 @@ def gcd(a,b):
 def lcm(a,b):
     return int(a*b/gcd(a,b))
 
-print(gcd(0,0))
-print(math.gcd(0,0))
+print(gcd(789,678))
+print(math.gcd(789,678))

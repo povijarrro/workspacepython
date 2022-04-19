@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
 
-SIZE = 500, 200
+SIZE = (500, 200)
 RED = (255, 0, 0)
 GRAY = (150, 150, 150)
 

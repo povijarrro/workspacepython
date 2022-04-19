@@ -4,7 +4,7 @@ import pygame as pg
 import sys
 
 pg.init()
-window=pg.display.set_mode((1000,1000))
+window=pg.display.set_mode((800,800))
 
 nono=Nonogram([
 [0,0,0,2],
