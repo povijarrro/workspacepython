@@ -44,7 +44,6 @@ def numberOfDangerousPoints(lines, diagonal = False):
                      points.append((point[0], point[1]))
 
 
-
     return len(list(duplicities(points)))
 
 testlines = [[("0", "9"), ("5", "9")],
