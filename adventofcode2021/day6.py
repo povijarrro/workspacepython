@@ -24,7 +24,6 @@ from collections import Counter
 
 def after_n_days(fishes, n):
     c = Counter(fishes)
-    print(type(c))
     c = [c[t] for t in range(9)]
     for day in range(n):
         nc = c[1:]
