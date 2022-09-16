@@ -18,7 +18,8 @@ dementor_mask=pg.mask.from_surface(dementor_img)
 
 point=pg.Surface((1,1)).convert_alpha()
 point.fill((0,0,0))
-point_rect=point.get_rect()
+m=pg.mask.from_surface(point)
+#point_rect=point.get_rect()
 
 dis.blit(dementor_img, dementor_rect)
 pg.display.update()
@@ -32,11 +33,11 @@ while run:
 
             
         if event.type == pg.MOUSEBUTTONDOWN:
-            point_rect.topleft=pg.mouse.get_pos()
-            m=pg.mask.from_surface(point)
-
+            #point_rect.topleft=pg.mouse.get_pos()
+            #m=pg.mask.from_surface(point)
+            pos=pg.mouse.get_pos()
             i+=1
-            if dementor_mask.overlap(m,(point_rect.left-dementor_rect.left, point_rect.top-dementor_rect.top)):
+            if dementor_mask.overlap(m,(pos[0]-dementor_rect.left, pos[1]-dementor_rect.top)):
                 print(True,f"{i}")
             else:
                 print(False,f"{i}")    
