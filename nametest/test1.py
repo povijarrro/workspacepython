@@ -1,0 +1,1 @@
+print(f"test1.py __name__ = {__name__}")

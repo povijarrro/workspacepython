@@ -48,15 +48,15 @@ nono2=Nonogram([
 
 #print([[nono.matrix[i][j] for j in range(nono.maxrowlen,nono.matrix_size[1])] for i in range(nono.ncol,nono.matrix_size[0])])
 window.fill((255,255,255))
-nono_surf=nono.get_surface(pg.font.SysFont("comicsans",20),(255,255,255),(0,0,0))
-window.blit(nono_surf, (0,0))
-draw_empty_grid(window,(0,0), (0,0,0), nono.tile_size, nono.matrix_size, nono.margin_size)
+nono_surf=nono.get_surface(pg.font.SysFont("comicsans", 20), (255, 255, 255), (0, 0, 0))
+window.blit(nono_surf, (0, 0))
+draw_empty_grid(window, (0, 0), (0, 0, 0), nono.tile_size, nono.matrix_size, nono.margin_size)
 print(nono)
 pg.display.update()
 print(nono.matrix_size)
-running=True
+running = True
 while running:
     for event in pg.event.get():
         if event.type == pg.QUIT:
-            running=False                   
+            running = False
 pg.quit()            

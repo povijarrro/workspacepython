@@ -1,3 +1,4 @@
+#!python
 import pygame,sys
 
 pygame.init()
@@ -5,12 +6,12 @@ screen = pygame.display.set_mode((800,800))
 clock = pygame.time.Clock()
 
 # ship setup
-ship_surf = pygame.image.load('ship.png').convert_alpha()
+ship_surf = pygame.image.load('./ship.png').convert_alpha()
 ship_rect = ship_surf.get_rect(center = (300,300))
 ship_mask = pygame.mask.from_surface(ship_surf)
 
 # obstacle setup
-obstacle_surf = pygame.image.load('dementor.png').convert_alpha()
+obstacle_surf = pygame.image.load('./alpha.png').convert_alpha()
 obstacle_pos = (100,100)
 obstacle_mask = pygame.mask.from_surface(obstacle_surf)
 

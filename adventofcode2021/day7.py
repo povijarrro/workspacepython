@@ -7,7 +7,7 @@ def min_fuel(crabs, increased_fuel_cost = False):
     m = sorted(crabs)[-1] if crabs else 0
     fuel = sum(crabs) if not increased_fuel_cost else sum([sum(range(crab+1)) for crab in crabs])
     for i in range(1, m+1):
-        s = sum([abs(crab-i) for crab in crabs ]) if not increased_fuel_cost else sum([sum(range(1, abs(crab-i)+1)) for crab in crabs])
+        s = sum([abs(crab-i) for crab in crabs]) if not increased_fuel_cost else sum([sum(range(1, abs(crab-i)+1)) for crab in crabs])
         if s < fuel:
             fuel = s
 

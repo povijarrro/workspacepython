@@ -26,4 +26,5 @@ def trapezoidmethod(f,a,b,n=1):
 print(rectanglemethod(lambda x:x**3,Fr(3),Fr(5),99999))
 print(trapezoidmethod(lambda x:x**3,Fr(3),Fr(5),99999))
 
+
     
