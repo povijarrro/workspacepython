@@ -38,6 +38,3 @@ for i in range(5):
         row.append(5*i+j)
     b.append(row)    
 print([[a[i][j] for j in range(2,4)] for i in range(1,4)])
-pygame.font.init()
-print(type(pygame.font.SysFont("comicsans",20).render("NIECO",1,(255,0,0))))
-print(__name__)
