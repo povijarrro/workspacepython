@@ -9,7 +9,7 @@ dis = pg.display.set_mode(SIZE)
 dis.fill((255,255,255))
 clock=pg.time.Clock()
 
-dementor_img=pg.image.load("./dementor.png").convert_alpha()
+dementor_img=pg.image.load("dementor.png").convert_alpha()
 dementor_rect=dementor_img.get_rect()
 dementor_rect.center=SIZE[0]/2, SIZE[1]/2
 dementor_mask=pg.mask.from_surface(dementor_img)

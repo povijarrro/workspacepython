@@ -1,3 +1,4 @@
+#!python
 from cmath import sqrt
 import pygame as pg
 from random import randint

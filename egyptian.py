@@ -1,3 +1,4 @@
+#!python
 from math import gcd
 
 def egyptian(x, y):
@@ -26,4 +27,5 @@ def egyptian(x, y):
     
     return(composition)
 
-print(egyptian(19, 23))
+x,y=-2,-5
+print(f"{x}/{y}={egyptian(x, y)}")
