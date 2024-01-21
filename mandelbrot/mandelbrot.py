@@ -1,4 +1,4 @@
-#python.exe
+#!python.exe
 import numpy as np
 from PIL import Image
 
@@ -24,5 +24,5 @@ def mandelbrot_image(xmin, xmax, ymin, ymax, width=10, height=10, maxiter=256):
             pixels[i,j] = (i % 8 * 32, j % 8 * 32,int(z[j,i]) % 8 * 32)
     return img
 
-img = mandelbrot_image(-2.0,0.5,-1.25,1.25,width=1000,height=1000,maxiter=256)
+img = mandelbrot_image(-2.0,0.5,-1.25,1.25,width=1000,height=1000,maxiter=1024)
 img.show()

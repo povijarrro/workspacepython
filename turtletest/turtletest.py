@@ -1,4 +1,4 @@
-#!python
+#!py
 from random import randint
 from turtle import Turtle, pencolor
 import turtle

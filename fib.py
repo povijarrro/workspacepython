@@ -1,5 +1,7 @@
+#!python
 import math
 import datetime
+import sys
 def fibonacci_rec(n):
     if n in (0, 1):
         return n
@@ -33,4 +35,5 @@ def fib(n):
         if rec=='1':    v1, v2, v3 = v1+v2, v1, v2
     return v2    
 
-print(fib(1000000))
+sys.set_int_max_str_digits(0)
+print(fib(100000))
