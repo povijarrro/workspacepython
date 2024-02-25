@@ -1,39 +1,28 @@
 #!python
-import math
-import datetime
 import sys
-def fibonacci_rec(n):
+from timeit import timeit
+def fib_rec(n):
     if n in (0, 1):
         return n
     else:
-        return fibonacci_rec(n-2) + fibonacci_rec(n-1)
+        return fib_rec(n-2) + fib_rec(n-1)
 
-
-def fib_gen():
-    yield 0
-    a, b = 0, 1
-    while(True):
-        a, b = b, a+b
-        yield a
-
-def fibonacci(n):
-    fibgen = fib_gen()
-    if n < 0:
-        c = 1 if n%2 else -1
-        return c*fibonacci(-n)
-    i = 0
-    for f in fibgen:
-        if i == n:
-            return f
-        i += 1
         
+def _fib(n):
+    if n == 0:
+        return (0, 1)
+    else:
+        a, b = _fib(n // 2)
+        c = a * (b * 2 - a)
+        d = a * a + b * b
+        if n % 2 == 0:
+            return (c, d)
+        else:
+            return (d, c + d)
+
 def fib(n):
-    v1, v2, v3 = 1, 1, 0    # initialise a matrix [[1,1],[1,0]]
-    for rec in bin(n)[3:]:  # perform fast exponentiation of the matrix (quickly raise it to the nth power)
-        calc = v2*v2
-        v1, v2, v3 = v1*v1+calc, (v1+v3)*v2, calc+v3*v3
-        if rec=='1':    v1, v2, v3 = v1+v2, v1, v2
-    return v2    
+    return _fib(n)[0]              
 
 sys.set_int_max_str_digits(0)
-print(fib(100000))
+for i in range(1000000):
+    print(f"{1000*i} : {timeit(lambda:fib(1000*i))}")
