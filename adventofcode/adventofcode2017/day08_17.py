@@ -29,8 +29,6 @@ def sol(instructions,part=1)-> int :
     return max(registers.values()) if part == 1 else max_value                    
            
            
-
-
 if __name__ == "__main__":
     with open("input08_17.txt") as inp:
         instructions = [d.strip().replace("dec -","inc ") for d in inp.readlines()]
