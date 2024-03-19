@@ -12,6 +12,12 @@ def divisors(n):
     for divisor in reversed(large_divisors):
         yield divisor
 
+
+def visited(elf:int)-> list:
+    return [i*elf for i in range(1,51) ]
+
+def n_of_gifts()     
+
 def sol(minimal:int)->int: 
     i=2
     while sum(divisors(i))<minimal:
@@ -23,4 +29,5 @@ def sol(minimal:int)->int:
 if __name__ == "__main__":
     
     minimal = 3400000
-    print(sol(minimal))
+    #print(sol(minimal))
+    print(visited(4))
