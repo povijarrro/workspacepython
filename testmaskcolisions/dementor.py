@@ -1,4 +1,5 @@
 #!python
+import sys
 import pygame as pg
 
 SIZE = 800,800
@@ -30,6 +31,8 @@ while run:
     for event in pg.event.get():
         if event.type == pg.QUIT:
             run=False
+            pg.quit()
+            sys.exit()
 
             
         if event.type == pg.MOUSEBUTTONDOWN:
