@@ -3,31 +3,25 @@
 import math
 
 def divisors(n):
-    large_divisors = []
-    for i in range(1, int(math.sqrt(n) + 1)):
-        if n % i == 0:
-            yield i
-            if i*i != n:
-                large_divisors.append(n // i)
-    for divisor in reversed(large_divisors):
-        yield divisor
+    divs = [i for i in range(1,int(math.sqrt(n) + 1)) if n % i == 0]
 
+    return divs + [n // d for d in divs if d**2 != n]         
 
-def visited(elf:int)-> list:
+def elf_houses(elf:int)-> list:
     return [i*elf for i in range(1,51) ]
 
-def n_of_gifts()     
+def house_elves(house:int, part = 1) -> list:
+    return [d for d in divisors(house) if house // d <= 50] if part != 1 else divisors(house)
 
-def sol(minimal:int)->int: 
+def sol(minimal:int, part = 1)->int: 
     i=2
-    while sum(divisors(i))<minimal:
+    
+    while (10+(part != 1))*sum(house_elves(i,part))<minimal:
         i+=1
 
-    return(i)    
-
-
+    return i
+        
 if __name__ == "__main__":
     
-    minimal = 3400000
-    #print(sol(minimal))
-    print(visited(4))
+    minimal = 34000000
+    print(f"Part 1 : {sol(minimal)}\nPart 2 : {sol(minimal,2)}")    
