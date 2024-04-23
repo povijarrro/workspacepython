@@ -11,7 +11,8 @@ def elf_houses(elf:int)-> list:
     return [i*elf for i in range(1,51) ]
 
 def house_elves(house:int, part = 1) -> list:
-    return [d for d in divisors(house) if house // d <= 50] if part != 1 else divisors(house)
+    divs = divisors(house)
+    return [d for d in divs if house // d <= 50] if part != 1 else divs
 
 def sol(minimal:int, part = 1)->int: 
     i=2
