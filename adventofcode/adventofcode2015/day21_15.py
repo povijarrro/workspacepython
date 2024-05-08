@@ -52,4 +52,3 @@ if __name__ =="__main__":
     player = {"hp":100,
               "damage":0,
               "armor":0}
-print(combinations_with_replacement(range(6),0)+combinations_with_replacement(range(6),2))

@@ -1,4 +1,4 @@
-#!py
+#!python
 from random import randint
 from turtle import Turtle, pencolor
 import turtle
@@ -37,6 +37,3 @@ n=5
 koch_snowflake(t,100,n)
 scr.exitonclick()
   
-
-
-

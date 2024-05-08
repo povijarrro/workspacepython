@@ -21,9 +21,8 @@ def is_nondecreasing(s:str)->bool:
 def get_passwords(low:int,high:int, part = 1)->set[str]:
     passwords = set()
     for i in range(max(low,100000),min(high,1000000)):
-        if (not has_double(str(i),part) or (not is_nondecreasing(str(i)))):
-            continue
-        passwords.add(str(i))
+        if has_double(str(i),part) and is_nondecreasing(str(i)):
+            passwords.add(str(i))
     return passwords 
 
 def sol(low:int,high:int,part = 1):
