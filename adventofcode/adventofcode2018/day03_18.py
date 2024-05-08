@@ -35,7 +35,6 @@ if __name__ == "__main__":
         plans = [plans[i]+[i+1] for i in range(len(plans))]
 
     print(sol(plans))
-    overlaps(2,3,plans)
            
 
     
