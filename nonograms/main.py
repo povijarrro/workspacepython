@@ -1,3 +1,4 @@
+#!python
 from pygame.constants import MOUSEBUTTONDOWN
 from nonogram import Nonogram, draw_empty_grid
 import pygame as pg
