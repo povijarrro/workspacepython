@@ -1,5 +1,4 @@
-import sys
-
+#!python
 
 def secret(text):
     res = ''
@@ -9,5 +8,4 @@ def secret(text):
     return res
 
 
-print(secret("Apač s apačkou spolu apačovali"))
-print(sys.argv[1])
+print(secret("Toto je tajná reč."))
