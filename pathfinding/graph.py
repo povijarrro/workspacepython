@@ -1,13 +1,11 @@
 class Graph:
-    
-    def __init__(self,neighs:dict[str,tuple[str]]):
-        self.neighs = neighs
-    
-    def neighbors(self,node:str)->tuple[str]:
-        return self.neighs[node] if node in self.neighs else tuple()
-    
-    def cost(self,start:str,goal:str)->int:
-        return 1
+    def __init__(self,graph):
+        self.graph = graph
+        def h(a,b):
+            return 1
+        self.heuristic = h
 
-
-
+    def add_edge(self, u, v, weight):
+        if u not in self.graph:
+            self.graph[u] = {}
+        self.graph[u][v] = weight

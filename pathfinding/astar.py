@@ -1,33 +1,37 @@
-#!python
-from queue import PriorityQueue
-
-def heuristic(a, b):
-    return 1
-    #return abs(a[0] - b[0]) + abs(a[1] - b[1])
+import heapq
 
 def a_star(graph, start, goal):
-    frontier = PriorityQueue()
-    frontier.put(start, 0)
-    came_from = {}
-    cost_so_far = {}
-    came_from[start] = None
-    cost_so_far[start] = 0
-    
-    while not frontier.empty():
-        current = frontier.get()
-        
+    queue = []
+    heapq.heappush(queue, (0, start))
+    costs = {start: 0}
+    path = {start: None}
+
+    while queue:
+        (cost, current) = heapq.heappop(queue)
+
         if current == goal:
             break
-        
-        for next in graph.neighbors(current):
-            new_cost = cost_so_far[current] + graph.cost(current, next)
-            if next not in cost_so_far or new_cost < cost_so_far[next]:
-                cost_so_far[next] = new_cost
-                priority = new_cost + heuristic(goal, next)
-                frontier.put(next, priority)
-                came_from[next] = current
-    
-    return came_from, cost_so_far
 
-# You would need to define your graph and the start and goal nodes
-# came_from, cost_so_far = a_star(graph, start, goal)
+        for neighbor in graph.graph[current]:
+            new_cost = costs[current] + graph.graph[current][neighbor]
+
+            if neighbor not in costs or new_cost < costs[neighbor]:
+                costs[neighbor] = new_cost
+                priority = new_cost + graph.heuristic(goal, neighbor)
+                heapq.heappush(queue, (priority, neighbor))
+                path[neighbor] = current
+
+    return costs, reconstruct_path(path,start,goal)
+
+def reconstruct_path(path, start, goal):
+    current = goal
+    path_to_goal = []
+
+    while current != start:
+        path_to_goal.append(current)
+        current = path[current]
+
+    path_to_goal.append(start)  # add the start node
+    path_to_goal.reverse()  # reverse the list to get the path from start to goal
+
+    return path_to_goal

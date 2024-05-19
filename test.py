@@ -1,4 +1,4 @@
-import pygame
+#!python
 
 def factorial(n):
     res=1
@@ -23,7 +23,7 @@ def draw_stars_pyramid(n,filled=True):
     return(res)    
 
 with open("testfile.txt","w") as testfile:
-    testfile.writelines(draw_stars_pyramid(4,filled=False))
+    testfile.writelines(draw_stars_pyramid(4,filled=True))
 #print(draw_stars_pyramid(10,False),factorial(100000))
 p=[[1,2,3],
 [4,5,6],

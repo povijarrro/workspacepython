@@ -20,12 +20,13 @@ def egyptian(x, y):
         return(first+"+"+egyptian(x,y))
     
     c=y//x+1
-    composition='1/'+str(c)+'+'+egyptian((-y)%x, y*c)
+    composition='1/'+str(c)+' + '+egyptian((-y)%x, y*c)
     
     if(neg):
         composition="-"+composition.replace('+', '-')
     
     return(composition)
 
-x,y=-2,-5
-print(f"{x}/{y}={egyptian(x, y)}")
+for n in range(1,10):
+    for i in range(1,n+1):
+        print(f"{i}/{n} = {egyptian(i, n)}")
