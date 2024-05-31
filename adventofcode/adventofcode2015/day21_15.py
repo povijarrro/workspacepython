@@ -21,7 +21,8 @@ def best_price(enemy:dict[str,int],shop:dict[str,dict[str,dict[str,int]]])->int:
 
 
 
-if __name__ =="__main__":
+def main():
+
     weapons={"Dagger":{"Cost":8,"Damage":4},
              "Shortsword":{"Cost":10,"Damage":5},
              "Warhammer":{"Cost":25,"Damage":6},
@@ -52,3 +53,6 @@ if __name__ =="__main__":
     player = {"hp":100,
               "damage":0,
               "armor":0}
+
+if __name__ == "__main__":
+   main()

@@ -25,8 +25,11 @@ def sol(instructions:list[int],part=1)->int:
     return steps
 
 
-if __name__ == "__main__":
+def main():
     with open("input05_17.txt") as inp:
         instructions = [int(d.strip()) for d in inp.readlines()]
 
     print(f"Part 1 : {sol(instructions)}\nPart 2 : {sol(instructions,2)}")
+
+if __name__ == "__main__":
+    main()

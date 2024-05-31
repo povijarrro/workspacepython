@@ -25,12 +25,13 @@ def get_filled(amount:int,capacities:list[int],minimal = False)->list[tuple]:
 def sol(amount:int,capacities:list[int],part = 1)->int:
     return len(get_filled(amount,capacities,part != 1))
 
-if __name__ == "__main__":
+def main():
     with open("input17_15.txt") as inp:
         capacities = sorted([int(d.strip()) for d in inp.readlines()])
 
     filled=get_filled(150,capacities)  
     ml= minlen(filled)
-    print(f"Part 1 : {sol(150,capacities)}\nPart 2 : {sol(150,capacities,2)}")  
+    print(f"Part 1 : {sol(150,capacities)}\nPart 2 : {sol(150,capacities,2)}") 
 
-       
+if __name__ == "__main__":
+    main()

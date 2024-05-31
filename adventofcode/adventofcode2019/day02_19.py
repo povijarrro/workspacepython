@@ -23,8 +23,11 @@ def sol(program:list[int],part = 1)->int:
                     return 100*noun+verb
 
 
-if __name__ == "__main__":
+def main():
     with open("input02_19.txt") as inp:
         program = list(map(int,inp.readline().strip().split(",")))
     
     print(f"Part 1 : {sol(program)}\nPart 2 : {sol(program,2)}")
+
+if __name__ == "__main__":
+    main()    

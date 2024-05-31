@@ -19,8 +19,12 @@ def sol(data:list[str], part=1)->int:
 
     return paper if part == 1 else ribbon   
 
-if __name__ == "__main__":
+def main():
+
     with open("input02_15.txt") as inp:
         data = [s.strip() for s in inp.readlines()]
 
     print(f"Part 1 : {sol(data,1)}\nPart 2 : {sol(data,2)}")   
+
+if __name__ == "__main__":
+    main()    

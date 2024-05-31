@@ -30,7 +30,10 @@ def sol(low:int,high:int,part = 1):
 
 
 
-if __name__ == "__main__":
+def main():
     low,high = 172851,675869
     
     print(f"Part 1 : {sol(low,high)}\nPart 2 : {sol(low,high,2)}")
+
+if __name__ == "__main__":
+    main()    

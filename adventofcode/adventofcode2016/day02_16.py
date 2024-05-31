@@ -32,8 +32,11 @@ def sol(data:list[str],part=1) :
 
     return password   
 
-if __name__ == "__main__":
+def main():
     with open("input02_16.txt") as inp:
         data = [d.strip() for d in inp.readlines()]
 
-    print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")   
+    print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}") 
+
+if __name__ == "__main__":
+    main()      

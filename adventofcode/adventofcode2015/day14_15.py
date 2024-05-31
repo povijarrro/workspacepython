@@ -31,10 +31,13 @@ def sol(time:int, data:dict[str,tuple[int,int,int]],part = 1)->int:
     return max(point for point in points(time,data).values())
 
 
-if __name__ == "__main__" :
+def main() :
     with open("input14_15.txt") as inp :
         data = [d.strip() for d in inp.readlines()]
         data = [d.split() for d in data]
         data = {spl[0]:(int(spl[3]),int(spl[6]),int(spl[-2])) for spl  in data}
 
-    print(f"Part 1 : {sol(2503,data)}\nPart 2 : {sol(2503,data,2)}")    
+    print(f"Part 1 : {sol(2503,data)}\nPart 2 : {sol(2503,data,2)}") 
+
+if __name__ == "__main__":
+    main()       

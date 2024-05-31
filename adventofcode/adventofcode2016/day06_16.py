@@ -27,11 +27,12 @@ def sol(words:list[str],part=1)->str:
 
     return message    
             
-if __name__ == "__main__":
+def main():
     with open("input06_16.txt") as inp:
         words = [w.strip() for w in inp.readlines()]
 
 
     print(f"Part 1 : {sol(words)}\nPart 2 : {sol(words,2)}")
- 
-    
+
+if __name__ == "__main__":
+    main()  

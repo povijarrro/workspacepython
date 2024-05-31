@@ -30,6 +30,9 @@ def sol(s:str, part=1)->int:
     
     return len(las)
 
-if __name__ == "__main__" :
+def main() :
     s = "1321131112"
     print(f"Part 1 : {sol(s)}\nPart 2 : {sol(s,2)}")
+
+if __name__ == "__main__":
+    main()    

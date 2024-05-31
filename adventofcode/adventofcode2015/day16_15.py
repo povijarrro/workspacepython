@@ -27,7 +27,7 @@ def sol(data:dict[int,dict[str,int]],conditions:dict[str,int],part=1)->int:
     return detect_sue(data,conditions,part==1)
 
 
-if __name__ == "__main__" :
+def main() :
     with open("input16_15.txt") as inp:
         data = [(d.strip()+",").split() for d in inp.readlines()]
         data = {int(spl[1][:-1]):{spl[i][:-1]:int(spl[i+1][:-1]) for i in range(2,7,2)} for spl in data}
@@ -44,3 +44,6 @@ if __name__ == "__main__" :
          "perfumes": 1}
     
     print(f"Part 1 : {sol(data,conditions)}\nPart 2 : {sol(data,conditions,2)}") 
+
+if __name__ == "__main__":
+    main()

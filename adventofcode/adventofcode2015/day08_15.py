@@ -25,11 +25,12 @@ def sol(data:list[str],part = 1)->int:
 
     return res   
 
-if  __name__ == "__main__" :
+def main():
     with open("input08_15.txt") as inp:
         data = [d.strip() for d in inp.readlines()]
 
     print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
     codelen('""')
 
-    
+if __name__ == "__main__":
+    main()

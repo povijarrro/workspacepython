@@ -13,8 +13,11 @@ def sol(mat,part=1):
                     break
         return res
 
-if __name__ == "__main__":
+def main():
     with open("input02_17.txt") as inp:
         spreadsheet = [sorted(list(map(int,d.strip().split()))) for d in inp.readlines()] 
 
-    print(f"Part 1 : {sol(spreadsheet)}\nPart 2 : {sol(spreadsheet,2)}")  
+    print(f"Part 1 : {sol(spreadsheet)}\nPart 2 : {sol(spreadsheet,2)}") 
+
+if __name__ == "__main__":
+    main()     

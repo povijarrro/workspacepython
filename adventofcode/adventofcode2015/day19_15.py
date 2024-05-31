@@ -33,11 +33,13 @@ def sol(data:list[tuple],molecule:str,part=1)->int:
     else:
         return random_replace(data,molecule,"e")
         
-if __name__ == "__main__":
+def main():
     with open("input19_15.txt") as inp:
         data = [d.strip() for d in inp.readlines()]
         molecule = data[-1]
         data = [tuple(d.split(" => ")) for d in data[:-2]]
         
     print(f"Part 1 : {sol(data,molecule)}\nPart 2 : {sol(data,molecule,2)}")
-    
+
+if __name__ == "__main__":
+    main()

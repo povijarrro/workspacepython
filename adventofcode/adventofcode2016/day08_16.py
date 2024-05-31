@@ -57,7 +57,7 @@ def sol(instructions:list[str],part=1)->int|str:
     else :
         return to_string(display)
     
-if __name__ == "__main__":
+def main():
     with open("input08_16.txt") as inp:
         instructions = [d.strip() for d in inp.readlines()]
     
@@ -69,3 +69,6 @@ if __name__ == "__main__":
         display.append(row)    
 
     print(f"Part 1 : {sol(instructions)}\nPart 2 : \n{sol(instructions,2)}")
+
+if __name__ == "__main__":
+    main()    

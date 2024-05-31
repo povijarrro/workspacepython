@@ -12,8 +12,11 @@ def sol(triangles:list[list],part=1)->int:
         return res
 
 
-if __name__ == "__main__":
+def main():
     with open("input03_16.txt") as inp:
         triangles = [[int(i) for i in d.strip().split()] for d in inp.readlines()]
 
-    print(f"Part 1 : {sol(triangles)}\nPart 2 : {sol(triangles,2)}")   
+    print(f"Part 1 : {sol(triangles)}\nPart 2 : {sol(triangles,2)}") 
+
+if __name__ == "__main__":
+    main()      

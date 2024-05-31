@@ -29,7 +29,7 @@ def sol(instructions,part=1)-> int :
     return max(registers.values()) if part == 1 else max_value                    
            
            
-if __name__ == "__main__":
+def main():
     with open("input08_17.txt") as inp:
         instructions = [d.strip().replace("dec -","inc ") for d in inp.readlines()]
         instructions = [i.replace("dec ","inc -") for i in instructions]
@@ -38,3 +38,6 @@ if __name__ == "__main__":
         instructions = [([i[0][0],int(i[0][1])],[i[1].split()[0],i[1].split()[1],int(i[1].split()[2])]) for i in instructions]
 
     print(f"Part 1 : {sol(instructions)}\nPart 2 : {sol(instructions,2)}")
+
+if __name__ == "__main__":
+    main()    

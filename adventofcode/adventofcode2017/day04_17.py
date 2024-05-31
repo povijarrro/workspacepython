@@ -9,8 +9,11 @@ def sol(passwords, part = 1):
         return sol(std)
 
 
-if __name__ == "__main__":
+def main():
     with open("input04_17.txt") as inp:
         passwords = [d.strip().split() for d in inp.readlines()]
 
-    print(f"Part 1 : {sol(passwords)}\nPart 2 : {sol(passwords,2)}")   
+    print(f"Part 1 : {sol(passwords)}\nPart 2 : {sol(passwords,2)}") 
+
+if __name__ == "__main__":
+    main()

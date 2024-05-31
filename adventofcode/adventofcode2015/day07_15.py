@@ -51,9 +51,7 @@ def sol(data:dict[str,str],part=1)->int:
         return eval_gate("a",data)
 
 
-
-
-if __name__ == "__main__":
+def main():
     with open("input07_15.txt") as inp:
         data = [d.strip() for d in inp.readlines()]
         data = [d.split(" -> ") for d in data]
@@ -76,4 +74,5 @@ if __name__ == "__main__":
     
     print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
 
-      
+if __name__ == "__main__":
+    main()   

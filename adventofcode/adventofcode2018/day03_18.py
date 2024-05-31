@@ -28,13 +28,13 @@ def sol(plans:list[list[tuple]],part = 1)->int:
         m,n = len(grid),len(grid[0])
         return sum(grid[pos[0]][pos[1]]>1 for pos in product(range(m),range(n)))
 
-if __name__ == "__main__":
+def main():
     with open("input03_18.txt") as inp:
         plans = [d.strip().split(" @ ")[1].split(": ") for d in inp.readlines()]
         plans = [[tuple(map(int,plan[0].split(","))),tuple(map(int,plan[1].split("x")))] for plan in plans]
         plans = [plans[i]+[i+1] for i in range(len(plans))]
 
     print(sol(plans))
-           
 
-    
+if __name__ == "__main__":
+    main()  

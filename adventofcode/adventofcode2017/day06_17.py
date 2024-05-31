@@ -32,9 +32,11 @@ def sol(banks:list[int],part = 1)->int:
         steps += 1
 
          
-if __name__ == "__main__":
+def main():
     with open("input06_17.txt") as inp:
         banks = list(map(int,inp.readline().strip().split()))
 
     print(f"Part 1 : {sol(banks)}\nPart 2 : {sol(banks,2)}")
-     
+
+if __name__ == "__main__":
+    main()

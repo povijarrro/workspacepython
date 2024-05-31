@@ -19,8 +19,11 @@ def sol(sequence:str, part = 1)->int:
 
 
         
-if __name__ == "__main__":
+def main():
     with open("input09_16.txt") as inp:
         sequence = inp.readline().strip()
 
     print(f"Part 1 : {sol(sequence)}\nPart 2 : {sol(sequence,2)}")
+
+if __name__ == "__main__":
+    main()    

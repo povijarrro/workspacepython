@@ -11,7 +11,10 @@ def ending(s:str,start="00000")->int:
 def sol(data,part=1):
     return ending(data,"00000"+(part-1)*"0")
 
-if __name__ == "__main__":
+def main():
     data = "ckczppom"
     
     print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
+
+if __name__ == "__main__":
+    main()

@@ -68,8 +68,11 @@ def sol(lines:list[str],part = 1)->str|int:
         unbal = get_unbalanced(oldweights)
         return get_weight(unbal[0][0],lines)[0]-unbal[1]
          
-if __name__ == "__main__":
+def main():
     with open("input07_17.txt") as inp:
         lines = [d.strip() for d in inp.readlines()]
 
     print(f"Part 1 : {sol(lines)}\nPart 2 : {sol(lines,2)}")
+
+if __name__ == "__main__":
+    main()

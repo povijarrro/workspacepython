@@ -15,8 +15,14 @@ def get_floor(data:str)->int:
 def sol(data:str,part=1)->int:
     return get_floor(data)[part-1]
 
-if __name__ == "__main__":
+def main():
     with open("input01_15.txt") as inp:
         data = inp.readlines()[0]
-
     print(f"Part 1 : {sol(data,1)}\nPart 2 : {sol(data,2)}") 
+
+if __name__ == "__main__":
+    main()
+    
+    
+
+    

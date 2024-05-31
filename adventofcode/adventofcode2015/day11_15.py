@@ -36,10 +36,12 @@ def sol(s:str,part=1)->str:
 
 
 
-if __name__ == "__main__" :
+def main() :
     s = "hepxcrrq"
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     abc = [alphabet[i]+alphabet[i+1]+alphabet[i+2] for i in range(len(alphabet)-2)]
 
     print(f"Part 1 : {sol(s)}\nPart 2 : {sol(s,2)}")
-    
+
+if __name__ == "__main__":
+    main() 

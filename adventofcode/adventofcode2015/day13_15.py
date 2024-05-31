@@ -34,7 +34,7 @@ def sol(data:dict[tuple[str,str],int],part = 1)->int:
     return max_happ(with_me)
 
 
-if __name__ == "__main__" :
+def main() :
     with open("input13_15.txt") as inp :
         data = [d.strip() for d in inp.readlines()]
         data = [d.replace(" would gain "," ") for d in data]
@@ -45,3 +45,6 @@ if __name__ == "__main__" :
     
 
     print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
+
+if __name__ == "__main__":
+    main()    

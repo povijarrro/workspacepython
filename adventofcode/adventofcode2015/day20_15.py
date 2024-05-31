@@ -22,7 +22,10 @@ def sol(minimal:int, part = 1)->int:
 
     return i
         
-if __name__ == "__main__":
+def main():
     
     minimal = 34000000
-    print(f"Part 1 : {sol(minimal)}\nPart 2 : {sol(minimal,2)}")    
+    print(f"Part 1 : {sol(minimal)}\nPart 2 : {sol(minimal,2)}") 
+
+if __name__ == "__main__":
+    main()       

@@ -30,8 +30,11 @@ def sol(instructions:list[list[str]],part = 1)->int:
         return res
 
 
-if __name__ == "__main__":
+def main():
     with open("input03_19.txt") as inp:
         instructions = [d.strip().split(",") for d in inp.readlines()]
 
     print(f"Part 1 : {sol(instructions)}\nPart 2 : {sol(instructions,2)}")
+
+if __name__ == "__main__":
+    main()

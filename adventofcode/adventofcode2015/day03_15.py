@@ -14,9 +14,12 @@ def sol(data:str,part=1)->int:
         return len(get_children(data))
     else : return len(get_children(data,step=2).union(get_children(data,start=1,step=2)))    
 
-if __name__ == "__main__":
+def main():
     with open("input03_15.txt") as inp:
         data=inp.readline() 
     
     print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
+
+if __name__ == "__main__":
+    main()    
         

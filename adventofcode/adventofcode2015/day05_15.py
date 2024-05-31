@@ -33,8 +33,11 @@ def sol(data:list[str], part=1)->int:
     
     return n
 
-if __name__ == "__main__":
+def main():
     with open("input05_15.txt") as inp:
         data = [d.strip() for d in inp.readlines()]
 
-    print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")   
+    print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")  
+
+if __name__ == "__main__":
+    main()     

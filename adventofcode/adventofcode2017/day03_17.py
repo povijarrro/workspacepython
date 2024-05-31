@@ -35,6 +35,9 @@ def  instructions(n:int):
     return ins    
 
 
-if __name__ == "__main__":
+def main():
     inp = 312051
     print(f"Part 1 : {sol(inp)}\nPart 2 : 312453") #OEIS https://oeis.org/A141481/b141481.txt
+
+if __name__ == "__main__":
+    main()

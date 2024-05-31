@@ -1,7 +1,4 @@
 #!python
-
-import sys
-
 def min_fuel(crabs, increased_fuel_cost = False):
 
     m = sorted(crabs)[-1] if crabs else 0
@@ -13,10 +10,14 @@ def min_fuel(crabs, increased_fuel_cost = False):
 
     return fuel
 
-test = [16,1,2,0,4,2,7,1,2,14]
+def sol(data, part = 1):
+    return min_fuel(data,part != 1)
 
-crabs = sys.argv[1:]
-crabs = crabs[0].split(",") if crabs else []
-crabs = [int(crab) for crab in crabs]
-print(min_fuel(test, True))
-print(min_fuel(crabs, True))
+def main():
+    with open("input07_21.txt") as inp:
+        data = [int(s) for s in inp.readline().strip().split(",")]
+
+        print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
+
+if __name__ == "__main__":
+    main()

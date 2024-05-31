@@ -59,8 +59,11 @@ def sol(instructions:list[str],d,part=1)->str:
                 return output["0"]*output["1"]*output["2"]       
 
 
-if __name__ == "__main__":
+def main():
     with open("input10_16.txt") as inp:
         instructions = [d.strip() for d in inp.readlines()]
     
     print(f"Part 1 : {sol(instructions,{"low":17,"high":61})}\nPart 2 : {sol(instructions,None,2)}")
+
+if __name__ == "__main__":
+    main()    

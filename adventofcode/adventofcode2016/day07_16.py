@@ -46,7 +46,7 @@ def sol(outsides:list[list[str]],hypernets:list[list[str]],part = 1)->int:
 
     return res
 
-if  __name__ == "__main__":
+def main():
     with open("input07_16.txt") as inp:
         ips = [d.strip() for d in inp.readlines()]
         hypernets = [[s[1:-1] for s in re.findall(r"\[.*?\]",ip)] for ip in ips]
@@ -54,5 +54,5 @@ if  __name__ == "__main__":
 
     print(f"Part 1 : {sol(outsides,hypernets)}\nPart 2 : {sol(outsides,hypernets,2)}")
 
-
-       
+if __name__ == "__main__":
+    main()    

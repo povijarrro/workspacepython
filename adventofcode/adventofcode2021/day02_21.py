@@ -1,13 +1,11 @@
 #!python
-import sys
 
-
-def getPosition(input, aimed=False):
+def getPosition(data, aimed=False):
     pos = [0, 0]
-    n = len(input)
+    n = len(data)
     aim = 0
     for i in range(n):
-        splitted = input[i].split(" ")
+        splitted = data[i].split(" ")
         match splitted[0]:
             case "forward":
                 pos[0] += int(splitted[1])
@@ -26,8 +24,15 @@ def getPosition(input, aimed=False):
 
     return pos
 
+def sol(data, part = 1):
+    pos = getPosition(data,part != 1)
+    return pos[0]*pos[1]
 
-pos1 = getPosition(sys.argv[1:], False)
-pos2 = getPosition(sys.argv[1:], True)
-print(pos1[0] * pos1[1])
-print(pos2[0] * pos2[1])
+def main():
+    with open("input02_21.txt") as inp:
+        data = [d.strip() for d in inp.readlines()]
+    print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
+
+
+if __name__ == "__main__":
+    main()

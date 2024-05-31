@@ -24,10 +24,11 @@ def sol(start:tuple,instructions:list[str],part=1):
          
     return abs(x-start[0])+abs(y-start[1])
 
-if __name__ == "__main__":
+def main():
     with open("input01_16.txt") as inp:
         instructions = inp.readline().strip().split(", ")
 
-    print(f"Part 1 : {sol((0,0,90),instructions)}\nPart 2 : {sol((0,0,90),instructions,2)}")   
+    print(f"Part 1 : {sol((0,0,90),instructions)}\nPart 2 : {sol((0,0,90),instructions,2)}")
 
-
+if __name__ == "__main__":
+    main()

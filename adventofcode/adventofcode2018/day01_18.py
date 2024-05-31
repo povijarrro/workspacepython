@@ -18,8 +18,11 @@ def sol(changes:list[int], part = 1)->int:
         seen = set()
         return next(f for f in accumulate(cycle(changes)) if f in seen or seen.add(f))
  
-if __name__ == "__main__":
+def main():
     with open("input01_18.txt") as inp:
         changes = [int(d.strip()) for d in inp.readlines()]
 
-    print(f"Part 1 : {sol(changes)}\nPart 2 : {sol(changes,2)}")    
+    print(f"Part 1 : {sol(changes)}\nPart 2 : {sol(changes,2)}") 
+
+if __name__ == "__main__":
+    main()

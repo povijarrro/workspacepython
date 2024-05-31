@@ -62,9 +62,12 @@ def sol(data:list[str], part=1)->int:
 
     return (sum([sum(l) for l in lights]), sum([sum(b) for b in brights]))[part-1]   
 
-if __name__ == "__main__":
+def main():
     with open("input06_15.txt") as inp:
         data = [d.strip() for d in inp] 
     
     
     print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
+
+if __name__ == "__main__":
+    main()

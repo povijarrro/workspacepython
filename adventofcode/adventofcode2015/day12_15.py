@@ -31,9 +31,11 @@ def sol(data:str, part = 1)->int:
     return no_red_numsum(eval(data))
 
 
-if __name__ == "__main__" :
+def main() :
     with open("input12_15.txt") as inp:
         data = inp.readline().strip()
 
     print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
-    
+
+if __name__ == "__main__":
+    main()  

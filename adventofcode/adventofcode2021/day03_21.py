@@ -1,7 +1,5 @@
 #!python
-import sys
 from statistics import multimode, mode
-
 
 def columns(l):
     n = len(l)
@@ -15,8 +13,8 @@ def columns(l):
     return res
 
 
-def getPowerConsumption(input):
-    cols = columns(input)
+def getPowerConsumption(data):
+    cols = columns(data)
     nc = len(cols)
     gamma = 0
     eps = 0
@@ -46,11 +44,13 @@ def getRating(inp, t):
     else:
         return int(getRating(inp, "ox"), 2)*int(getRating(inp, "co2"), 2)
 
+def sol(data,part = 1):
+    return getPowerConsumption(data) if part == 1 else getRating(data,"life")
 
+def main():
+    with open("input03_21.txt") as inp:
+        data = [d.strip() for d in inp.readlines()]
+    print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")    
 
-l = ["00100", "11110", "10110", "10111", "10101", "01111", "00111", "11100", "10000", "11001", "00010", "01010"]
-
-#print(getPowerConsumption(l))
-print(getRating(sys.argv[1:], "life"))
-# print(getPowerConsumption(sys.argv[1:]))
-print(getRating(l, "life"))
+if __name__ == "__main__":
+    main()

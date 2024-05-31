@@ -39,9 +39,12 @@ def sol(data:list[list[int]],part=1)->list[list[int]]:
     return sum(sum(d) for d in new)  
 
 
-if __name__ == "__main__" :
+def main() :
     with open("input18_15.txt") as inp:
         data=[list(d.strip()) for d in inp.readlines()]
         data=[[0 if c=="." else 1 for c in s] for s in data]
 
     print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
+
+if __name__ == "__main__":
+    main()    

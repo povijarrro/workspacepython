@@ -24,7 +24,7 @@ def sol(encrs:list[str],checksums:list[str],ids:list[int],part = 1)->int:
 
 
      
-if  __name__ == "__main__":
+def main():
     with open("input04_16.txt") as inp:
         rooms = [r.strip() for r in inp.readlines()]
         spl = [r.split("-") for r in rooms]
@@ -33,6 +33,6 @@ if  __name__ == "__main__":
         checksums = [s[-1].split("[")[-1][:-1] for s in spl]
 
     print(f"Part 1 : {sol(encrs,checksums,ids)}\nPart 2 : {sol(encrs,checksums,ids,2)}")
-    
-        
- 
+
+if __name__ == "__main__":
+    main()    

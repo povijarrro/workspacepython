@@ -1,5 +1,4 @@
 #!python
-
 from functools import reduce
 from itertools import product
 
@@ -47,7 +46,7 @@ def optimal_score(data:dict[str,dict[str,int]], cals = 0)->int:
 def sol(data:dict[str,dict[str,int]], part = 1)->int:
     return optimal_score(data,500*(part-1))
 
-if __name__ == "__main__":
+def main():
     with open("input15_15.txt") as inp:
         data = [d.strip() for d in inp.readlines()]
         data = [d+"," for d in data]
@@ -55,3 +54,6 @@ if __name__ == "__main__":
         data = {spl[0][:-1]:{spl[i]:int(spl[i+1][:-1]) for i in range(1,10,2)} for spl in data}
 
     print(f"Part 1 : {sol(data)}\nPart 2 : {sol(data,2)}")
+
+if __name__ == "__main__":
+    main()    

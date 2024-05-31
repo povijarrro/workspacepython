@@ -34,7 +34,10 @@ def password(s:str,start="00000", length=8,part=1)->int:
 def sol(id,part=1)->str:
     return password(id,"00000",8,part)
 
-if __name__ == "__main__":
+def main():
     id = "ffykfhsq"
     
     print(f"Part 1 : {sol(id)}\nPart 2 : {sol(id,2)}")
+
+if __name__ == "__main__":
+    main()
