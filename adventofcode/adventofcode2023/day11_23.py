@@ -92,8 +92,11 @@ def solution2(data:list[str])->int:
     
     return sum
 
-if __name__ == "__main__":
-    data = readLines("input11.txt")
+def main():
+    data = readLines("input11_23.txt")
     
     print(f"Part 1 : {solution1(data)}")
     print(f"Part 2 : {solution2(data)}")
+
+if __name__ == "__main__":
+    main()

@@ -62,15 +62,12 @@ def solution2(data:list[tuple])->int:
     return total
 
 
-if __name__ == "__main__":
-    data = readLines("input07.txt")
+def main():
+    data = readLines("input07_23.txt")
     data = [(i.split()[0], int(i.split()[1])) for i in data]
 
     print(f"Part 1 : {solution1(data)}")
     print(f"Part 2 : {solution2(data)}")
 
-
-
-
-    
-    
+if __name__ == "__main__":
+    main()

@@ -19,9 +19,12 @@ def solution1(data:list[list[int]])->int:
 def solution2(data:list[list[int]])->int:
     return sum([prev(d) for d in data])
 
-if __name__ == "__main__":
-    data = readLines("input09.txt")
+def main():
+    data = readLines("input09_23.txt")
     data = [list(map(int,d.split())) for d in data]
 
     print(f"Part 1 : {solution1(data)}")
     print(f"Part 2 : {solution2(data)}")
+
+if __name__ == "__main__":
+    main()

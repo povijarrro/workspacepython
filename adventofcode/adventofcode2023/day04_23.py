@@ -21,8 +21,8 @@ def solution2(data:list[list[set]])->int:
     return sum(copies)
 
 
-if __name__=="__main__":
-    data = readLines("input04.txt")
+def main():
+    data = readLines("input04_23.txt")
     data = [i.split("|") for i in data]
     for row in data:
         row[0]=set(row[0][row[0].index(":")+2:].strip().split(" "))
@@ -30,3 +30,6 @@ if __name__=="__main__":
 
     print(f"Part 1 : {solution1(data)}")
     print(f"Part 2 : {solution2(data)}")
+
+if __name__ == "__main__":
+    main()    

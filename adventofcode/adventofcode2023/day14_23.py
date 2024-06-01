@@ -51,8 +51,7 @@ def cycledonce(data:list[str])->list[str]:
 
 def cycled(data:list[str],times:int)->list[str]:
     cyc=cycledonce(data)
-    for i in range(times-1):
-        print(i)
+    for _ in range(times-1):
         cyc=cycledonce(cyc)
 
     return cyc    
@@ -69,7 +68,10 @@ def solution1(data:list[str])->int:
 def solution2(data:list[str])->int:
     return(solution1(tiltedNorth(cycled(data,1000000000))))
 
-if __name__ == "__main__":
-    data = readLines("example14.txt")
+def main():
+    data = readLines("input14_23.txt")
     print(f"Part 1 : {solution1(data)}") 
     print(f"Part 2 : {solution2(data)}")
+
+if __name__ == "__main__":
+    main()    

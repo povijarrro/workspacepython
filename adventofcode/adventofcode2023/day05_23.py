@@ -79,9 +79,9 @@ def solution2(data):
 
 
 if __name__ == "__main__":
-    data = readLines("input05.txt","\n\n")
+    data = readLines("input05_23.txt","\n\n")
     data = [i.splitlines() for i in data]
     seeds = [int(i) for i in data[0][0].split()[1:]]
 
     print(f"Part 1 : {solution1(data)}")
-    #print(f"Part 2 : {solution2(data)}")
+    print(f"Part 2 : {solution2(data)}")

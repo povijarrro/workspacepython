@@ -33,10 +33,13 @@ def solution2(data:list[list[dict]])->int:
     
     return sol
 
-if (__name__ == "__main__"):
-    data = readLines("input02.txt")
+def main() :
+    data = readLines("input02_23.txt")
     data = [s.split(":")[1:][0].split(";") for s in data]
     data = [[getCounts(t) for t in s] for s in data]
     
     print(f"Part 1 : {solution1(data)}")
     print(f"Part 2 : {solution2(data)}")
+
+if __name__ == "__main__":
+    main()

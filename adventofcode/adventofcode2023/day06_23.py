@@ -29,10 +29,12 @@ def solution2(data:list[list[str]])->int:
     return nOfRecords(time,rec)
     
 
-if __name__ == "__main__":
-    data = readLines("input06.txt")
+def main():
+    data = readLines("input06_23.txt")
     data = [i.split()[1:] for i in data]
     
     print(f"Part 1 : {solution1(data)}")
     print(f"Part 2 : {solution2(data)}")
-   
+
+if __name__ == "__main__":
+    main()

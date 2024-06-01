@@ -65,8 +65,8 @@ def solution2(data:dict, navs:str)->int:
             
     return lcm(*pathLens)
 
-if __name__ == "__main__":
-    data = readLines("input08.txt","\n\n")
+def main():
+    data = readLines("input08_23.txt","\n\n")
     navs, *data = data
     data = [i.split("\n") for i in data][0]
     
@@ -79,3 +79,7 @@ if __name__ == "__main__":
     
     print(f"Part 1 : {solution1(data,navs)}")
     print(f"Part 2 : {solution2(data,navs)}")
+
+if __name__ == "__main__":
+    main()    
+    

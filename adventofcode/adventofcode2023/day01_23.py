@@ -40,10 +40,15 @@ def solution2(lst):
     for string in lst: 
         f,l=firstDigit(string)[0], lastDigit(string)[0]
         sum+=int(f+l)
-    return sum  
+    return sum 
+
+
                
-if __name__ == "__main__":
-    data = readLines("input01.txt")
+def main():
+    data = readLines("input01_23.txt")
 
     print(f"Part 1 : {solution1(data)}")
     print(f"Part 2 : {solution2(data)}")
+
+if __name__ == "__main__":
+    main()    

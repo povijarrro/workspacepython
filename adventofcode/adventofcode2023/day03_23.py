@@ -89,9 +89,11 @@ def solution2(data):
 
 
 
-if __name__ == "__main__":
+def main():
     data = readLines("example03.txt")
     
     print(f"Part 1 : {solution1(data)}")
     print(f"Part 2 : {solution2(data)}")
-    
+
+if __name__ == "__main__":
+    main()        

@@ -49,20 +49,15 @@ def solution2(points:list[tuple], vels:list[tuple])->int:
     print(s.check()) 
     return s.model().eval(x1+x2+x3)  
 
-if __name__ == "__main__":
-    data = readLines("example24.txt")
+def main():
+    data = readLines("input24_23.txt")
     points = [d.split(", ") for d in [i[0] for i in [d.split(" @ ") for d in data]]]
     points = [tuple(map(int,p)) for p in points]
     vels = [d.split(", ") for d in [i[1] for i in [d.split(" @ ") for d in data]]]
     vels = [tuple(map(int,v)) for v in vels]
     
     print(f"Part 1 : {solution1(points,vels)}")
-    
-    print(dist(points[0],points[1],vels[0],vels[1]))
-    
-    for i in range(len(points)):
-        print(dist(points[i],(24,13,10),vels[i],(-3,1,2)))
-    
-    print(solution2(points[:2],vels[:2]))
+    print(f"Part 2 : {solution2(points[:2],vels[:2])}")
 
-    
+if __name__ == "__main__":
+    main()   

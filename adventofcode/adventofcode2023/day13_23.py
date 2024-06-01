@@ -30,20 +30,18 @@ def solution1(data:list[list[str]])->int:
         h=href(d)
         if h>= 0:
             sol+=100*h
-            print(f"h : {h}")
         else:
             v = vref(d)
             if v>=0 : 
                 sol+=v
-                print(f"v : {v}")
 
     return sol
    
 
-if __name__ == "__main__":
-    data = readLines("input13.txt","\n\n")
+def main():
+    data = readLines("input13_23.txt","\n\n")
     data = [d.splitlines() for d in data]
     print(solution1(data))
     
-
-    
+if __name__ == "__main__":
+    main()  
