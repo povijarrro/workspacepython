@@ -1,28 +1,35 @@
 #!python
-import sys
-from timeit import timeit
-def fib_rec(n):
-    if n in (0, 1):
-        return n
-    else:
-        return fib_rec(n-2) + fib_rec(n-1)
+from timeit import Timer
+import gmpy2
+import numpy as np
 
-        
-def _fib(n):
-    if n == 0:
-        return (0, 1)
-    else:
-        a, b = _fib(n // 2)
-        c = a * (b * 2 - a)
-        d = a * a + b * b
-        if n % 2 == 0:
-            return (c, d)
-        else:
-            return (d, c + d)
+def _gmpfib(n:int)->gmpy2.mpz:
+    Q = np.matrix([[gmpy2.mpz(1),gmpy2.mpz(1)],[gmpy2.mpz(1),gmpy2.mpz(0)]],dtype = object)
+    if n > 1:
+        Qn = Q**(n-1)
+        return Qn[0,0]
+    return gmpy2.mpz(n)
 
-def fib(n):
-    return _fib(n)[0]              
+def _fib(n:int)->int:
+     Q = np.matrix([[1,1],[1,0]],dtype = object)
+     if n > 1:
+         Qn = Q**(n-1)
+         return Qn[0,0]
+     return n
 
-sys.set_int_max_str_digits(0)
-for i in range(1000000):
-    print(f"{1000*i} : {timeit(lambda:fib(1000*i))}")
+def gmpfib(n:int)->gmpy2.mpz:
+    return (-1)**(-n-1)*_gmpfib(-n) if n < 0 else _gmpfib(n)
+    
+def fib(n:int)->int:
+    return  (-1)**(-n-1)*_fib(-n) if n < 0 else _fib(n)
+ 
+def main():
+    #t = Timer(stmt = "fib(10_000_000)",setup = "from __main__ import fib")
+    #print(f"without gmp : {t.timeit(1)}")
+    t = Timer(stmt = "gmpfib(10_000_000)",setup = "from __main__ import gmpfib")
+    print(f"with gmp : {t.timeit(10)/10}")
+    for i in range(-10,11):
+        print(f"{i} : {type(gmpfib(i))}")
+
+if __name__ == "__main__":
+    main()
