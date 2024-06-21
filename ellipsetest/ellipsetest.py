@@ -45,8 +45,8 @@ def randpoints(n):
     xres=[]
     yres=[]  
     for __ in range(n-1):
-        xres.append(randint(-screen.get_width()/2,screen.get_width()/2))
-        yres.append(randint(-screen.get_height()/2,screen.get_height()/2)) 
+        xres.append(randint(-screen.get_width()//2,screen.get_width()//2))
+        yres.append(randint(-screen.get_height()//2,screen.get_height()//2)) 
        
     xres.append(-sum(xres))
     yres.append(-sum(yres)) 
