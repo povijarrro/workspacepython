@@ -43,6 +43,7 @@ def main():
         pos[i] = (0.5 * np.cos(angle), 0.5 * np.sin(angle))
 
     nx.draw(petersen,pos,with_labels=True,ax=ax[0,2])
+    print(nx.astar_path(G,"C",3))
 
     plt.show()
 
