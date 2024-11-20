@@ -1,7 +1,7 @@
 #!python
 from math import gcd
 
-def egyptian(x, y):
+def egyptian(x:int, y:int)->str:
     
     if(y==0): return("UNDEFINED")
     if(x==0): return("0")
@@ -27,6 +27,12 @@ def egyptian(x, y):
     
     return(composition)
 
-for n in range(1,10):
-    for i in range(1,n+1):
-        print(f"{i}/{n} = {egyptian(i, n)}")
+def main()->None:
+
+    for n in range(1,10):
+        for i in range(1,n+1):
+            print(f"{i}/{n} = {egyptian(i, n)}")
+
+
+if __name__ == "__main__":
+    main()           
