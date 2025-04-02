@@ -12,9 +12,8 @@ def reduced(s:str, part = 2):
     return s
 
 def main():
-    with open("example25_08.txt") as inp:
+    with open("input25_08.txt") as inp:
         data:list[str] = [d.strip() for d in inp.readlines()]
-        print(data)
     sol1 = sum(sum(c.isalpha() for c in s) for s in data)
     sol2 = sum(len(reduced(d,2)) for d in data)
     sol3 = sum(len(reduced(d,3)) for d in data)
